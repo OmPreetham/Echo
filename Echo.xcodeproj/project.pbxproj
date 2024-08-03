@@ -15,6 +15,12 @@
 		0EA282DE2C5ED4D40074244C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282DD2C5ED4D40074244C /* RegistrationView.swift */; };
 		0EA282E12C5ED6A40074244C /* EchoTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282E02C5ED6A40074244C /* EchoTextFieldModifier.swift */; };
 		0EA282E32C5ED7FF0074244C /* EchoButtonBlackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282E22C5ED7FF0074244C /* EchoButtonBlackModifier.swift */; };
+		0EA282E92C5EDDF90074244C /* EchoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282E82C5EDDF90074244C /* EchoTabView.swift */; };
+		0EA282ED2C5EE2C70074244C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282EC2C5EE2C70074244C /* FeedView.swift */; };
+		0EA282F12C5EE3120074244C /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F02C5EE3120074244C /* ExploreView.swift */; };
+		0EA282F52C5EE3460074244C /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F42C5EE3460074244C /* CreateView.swift */; };
+		0EA282F92C5EE3670074244C /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F82C5EE3670074244C /* ActivityView.swift */; };
+		0EA282FD2C5EE3850074244C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282FC2C5EE3850074244C /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		0EA282DD2C5ED4D40074244C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0EA282E02C5ED6A40074244C /* EchoTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoTextFieldModifier.swift; sourceTree = "<group>"; };
 		0EA282E22C5ED7FF0074244C /* EchoButtonBlackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoButtonBlackModifier.swift; sourceTree = "<group>"; };
+		0EA282E82C5EDDF90074244C /* EchoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoTabView.swift; sourceTree = "<group>"; };
+		0EA282EC2C5EE2C70074244C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		0EA282F02C5EE3120074244C /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		0EA282F42C5EE3460074244C /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		0EA282F82C5EE3670074244C /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		0EA282FC2C5EE3850074244C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +131,14 @@
 		0EA282D72C5ECB1A0074244C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0EA282F62C5EE35B0074244C /* Activity */,
 				0EA282D82C5ECB570074244C /* Authentication */,
+				0EA282F22C5EE3350074244C /* Create */,
+				0EA282EE2C5EE3060074244C /* Explore */,
+				0EA282EA2C5EE2AC0074244C /* Feed */,
+				0EA282FA2C5EE37A0074244C /* Profile */,
 				0EA282D92C5ECB5E0074244C /* Root */,
+				0EA282E72C5EDDC00074244C /* TabBar */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -157,6 +175,94 @@
 				0EA282E22C5ED7FF0074244C /* EchoButtonBlackModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		0EA282E72C5EDDC00074244C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282E82C5EDDF90074244C /* EchoTabView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0EA282EA2C5EE2AC0074244C /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282EB2C5EE2B30074244C /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		0EA282EB2C5EE2B30074244C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282EC2C5EE2C70074244C /* FeedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EA282EE2C5EE3060074244C /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282EF2C5EE30B0074244C /* View */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		0EA282EF2C5EE30B0074244C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282F02C5EE3120074244C /* ExploreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EA282F22C5EE3350074244C /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282F32C5EE33D0074244C /* View */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		0EA282F32C5EE33D0074244C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282F42C5EE3460074244C /* CreateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EA282F62C5EE35B0074244C /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282F72C5EE3600074244C /* View */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		0EA282F72C5EE3600074244C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282F82C5EE3670074244C /* ActivityView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EA282FA2C5EE37A0074244C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282FB2C5EE37F0074244C /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0EA282FB2C5EE37F0074244C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA282FC2C5EE3850074244C /* ProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +335,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA282F92C5EE3670074244C /* ActivityView.swift in Sources */,
+				0EA282ED2C5EE2C70074244C /* FeedView.swift in Sources */,
+				0EA282F12C5EE3120074244C /* ExploreView.swift in Sources */,
 				0EA282DC2C5ECB890074244C /* LoginView.swift in Sources */,
+				0EA282FD2C5EE3850074244C /* ProfileView.swift in Sources */,
 				0EA282C52C5ECAE50074244C /* ContentView.swift in Sources */,
+				0EA282F52C5EE3460074244C /* CreateView.swift in Sources */,
 				0EA282E12C5ED6A40074244C /* EchoTextFieldModifier.swift in Sources */,
 				0EA282C32C5ECAE50074244C /* EchoApp.swift in Sources */,
 				0EA282DE2C5ED4D40074244C /* RegistrationView.swift in Sources */,
+				0EA282E92C5EDDF90074244C /* EchoTabView.swift in Sources */,
 				0EA282E32C5ED7FF0074244C /* EchoButtonBlackModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
