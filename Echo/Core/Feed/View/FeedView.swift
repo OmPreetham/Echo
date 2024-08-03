@@ -12,7 +12,7 @@ struct FeedView: View {
         NavigationStack {
             ScrollView(.vertical) {
                 LazyVStack {
-                    ForEach(0..<10, id: \.self) { thread in
+                    ForEach(0..<10, id: \.self) { post in
                         PostCell()
                     }
                 }
