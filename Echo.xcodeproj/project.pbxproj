@@ -21,6 +21,7 @@
 		0EA282F52C5EE3460074244C /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F42C5EE3460074244C /* CreateView.swift */; };
 		0EA282F92C5EE3670074244C /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F82C5EE3670074244C /* ActivityView.swift */; };
 		0EA282FD2C5EE3850074244C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282FC2C5EE3850074244C /* ProfileView.swift */; };
+		0EA282FF2C5EE5050074244C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282FE2C5EE5050074244C /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		0EA282F42C5EE3460074244C /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		0EA282F82C5EE3670074244C /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0EA282FC2C5EE3850074244C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0EA282FE2C5EE5050074244C /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA282EC2C5EE2C70074244C /* FeedView.swift */,
+				0EA282FE2C5EE5050074244C /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				0EA282C52C5ECAE50074244C /* ContentView.swift in Sources */,
 				0EA282F52C5EE3460074244C /* CreateView.swift in Sources */,
 				0EA282E12C5ED6A40074244C /* EchoTextFieldModifier.swift in Sources */,
+				0EA282FF2C5EE5050074244C /* PostCell.swift in Sources */,
 				0EA282C32C5ECAE50074244C /* EchoApp.swift in Sources */,
 				0EA282DE2C5ED4D40074244C /* RegistrationView.swift in Sources */,
 				0EA282E92C5EDDF90074244C /* EchoTabView.swift in Sources */,
