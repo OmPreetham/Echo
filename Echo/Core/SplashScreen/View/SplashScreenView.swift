@@ -19,7 +19,7 @@ struct SplashScreenView: View {
             
             ZStack {
                 Image(systemName: "rectangle.3.offgrid.bubble.left.fill")
-                    .font(.system(size: 108))
+                    .font(.system(size: 54))
                     .foregroundStyle(.foreground)
             }
             .scaleEffect(scale)
@@ -38,7 +38,7 @@ struct SplashScreenView: View {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: {
                 withAnimation(.spring(duration: 0.35)) {
-                    scale = CGSize(width: 50, height: 50)
+                    scale = CGSize(width: 108, height: 108)
                     screenOpacity = 0
                 }
             })

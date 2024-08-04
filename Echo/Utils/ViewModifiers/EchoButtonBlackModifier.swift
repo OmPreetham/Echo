@@ -12,11 +12,12 @@ struct EchoButtonBlackModifier: ViewModifier {
         content
             .font(.subheadline)
             .fontWeight(.semibold)
-            .frame(width: 320)
+            .frame(maxWidth: .infinity)
             .padding()
             .foregroundStyle(.background)
             .background(.foreground)
             .tint(.primary)
             .clipShape(RoundedRectangle(cornerRadius: 8))
+            .padding(.horizontal)
     }
 }
