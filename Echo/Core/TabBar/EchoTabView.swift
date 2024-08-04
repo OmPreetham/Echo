@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EchoTabView: View {
     @State private var selectedTab = 0
+    @State private var showingCreate = false
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             FeedView()
@@ -26,7 +28,7 @@ struct EchoTabView: View {
                 .onAppear { selectedTab = 1 }
                 .tag(1)
             
-            CreateView()
+            Text("Creating Post")
                 .tabItem {
                     Label("Create", systemImage: "plus")
                 }
@@ -48,6 +50,14 @@ struct EchoTabView: View {
                 }
                 .onAppear { selectedTab = 4 }
                 .tag(4)
+        }
+        .onChange(of: selectedTab, { oldValue, newValue in
+            showingCreate = selectedTab == 2
+        })
+        .sheet(isPresented: $showingCreate, onDismiss: {
+            selectedTab = 0
+        }) {
+            CreateView()
         }
         .tint(.black)
     }

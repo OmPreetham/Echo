@@ -8,8 +8,63 @@
 import SwiftUI
 
 struct CreateView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var caption = ""
+    
     var body: some View {
-        Text("Hello, Create!")
+        NavigationStack {
+            VStack {
+                HStack(alignment: .top) {
+                    CircularProfileImageView()
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Shinji")
+                            .fontWeight(.semibold)
+                        
+                        TextField("Start writing", text: $caption, axis: .vertical)
+                    }
+                    .font(.footnote)
+                    
+                    Spacer()
+                    
+                    if !caption .isEmpty {
+                        Button {
+                            caption = ""
+                        } label: {
+                            Image(systemName: "xmark")
+                                .resizable()
+                                .foregroundStyle(.gray)
+                                .frame(width: 12, height: 12)
+                        }
+                    }
+                }
+                
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("New Post")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(.black)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Post") {
+                        
+                    }
+                    .opacity(caption.isEmpty ? 0.5 : 1)
+                    .disabled(caption.isEmpty)
+                    .font(.subheadline)
+                    .foregroundStyle(.black)
+                }
+            }
+        }
     }
 }
 
