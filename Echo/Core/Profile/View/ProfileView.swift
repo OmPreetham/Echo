@@ -16,19 +16,29 @@ struct ProfileView: View {
                 ProfileHeaderView(user: user)
                 
                 Button {
-                    
+                    // Add follow button action here
                 } label: {
-                    Text("Follow")
+                    Label("Follow", systemImage: "person.fill.badge.plus")
                         .modifier(EchoButtonBlackModifier())
                 }
                 
                 UserContentListView()
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                if let url = URL(string: "https://echo.com/users/\(user.username)") {
+                    ShareLink(
+                        item: url,
+                        preview: SharePreview(user.username, image: Image("Shinji"))
+                    )
+                }
+            }
+        }
         .navigationTitle(user.username)
         .scrollIndicators(.hidden)
         .refreshable {
-            
+            // Add refreshable action here
         }
     }
 }

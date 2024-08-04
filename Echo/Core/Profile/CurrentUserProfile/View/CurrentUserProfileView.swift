@@ -26,13 +26,14 @@ struct CurrentUserProfileView: View {
                                 Button {
                                     
                                 } label: {
-                                    Text("Edit")
+                                    Label("Edit", systemImage: "square.and.pencil")
                                 }
                                 
-                                Button {
-                                    
-                                } label: {
-                                    Text("Share")
+                                if let url = URL(string: "https://echo.com/users/\(currentUser.username)") {
+                                    ShareLink(
+                                        item: url,
+                                        preview: SharePreview(currentUser.username, image: Image("Shinji"))
+                                    )
                                 }
                             }
                             .modifier(EchoButtonBlackModifier())
