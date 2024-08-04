@@ -29,7 +29,7 @@ struct PostCell: View {
                             
                         } label: {
                             Image(systemName: "ellipsis")
-                                .foregroundStyle(Color(.darkGray))
+                                .foregroundStyle(.foreground)
                         }
                     }
                     
@@ -60,7 +60,7 @@ struct PostCell: View {
                             Image(systemName: "paperplane")
                         }
                     }
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     .padding(.vertical, 8)
                 }
             }
@@ -68,6 +68,7 @@ struct PostCell: View {
             .padding(.trailing)
             
             Divider()
+                .background(.tertiary)
         }
         .padding(.leading)
     }

@@ -12,7 +12,7 @@ struct EchoTextFieldModifier: ViewModifier {
         content
             .font(.subheadline)
             .padding(12)
-            .background(Color(.systemGray6))
+            .background(.quaternary)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.horizontal, 24)
     }

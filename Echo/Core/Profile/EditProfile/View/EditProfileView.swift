@@ -15,7 +15,7 @@ struct EditProfileView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(.systemGroupedBackground)
+                Color(.tertiarySystemGroupedBackground)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -34,7 +34,8 @@ struct EditProfileView: View {
                     }
                     
                     Divider()
-                    
+                        .background(.tertiary)
+
                     // Bio field
                     
                     VStack(alignment: .leading) {
@@ -45,7 +46,8 @@ struct EditProfileView: View {
                     }
                     
                     Divider()
-                    
+                        .background(.tertiary)
+
                     VStack(alignment: .leading) {
                         Text("Link")
                             .fontWeight(.semibold)
@@ -54,12 +56,14 @@ struct EditProfileView: View {
                     }
                     
                     Divider()
+                        .background(.tertiary)
 
                     Toggle("Private Profile", isOn: $isPrivateProfile)
+                        .tint(.accentColor)
                 }
                 .font(.footnote)
                 .padding()
-                .background(Color.white)
+                .background(.background)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding()
             }
@@ -71,7 +75,7 @@ struct EditProfileView: View {
                         
                     }
                     .font(.subheadline)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.foreground)
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -80,7 +84,7 @@ struct EditProfileView: View {
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.foreground)
                 }
             }
         }

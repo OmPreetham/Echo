@@ -20,7 +20,7 @@ struct RegistrationView: View {
             
             Spacer()
             
-            Image("Echo")
+            Image(systemName: "rectangle.3.group.bubble.left.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
@@ -50,7 +50,7 @@ struct RegistrationView: View {
             Spacer()
                         
             Divider()
-            
+                .background(.secondary)
             Button {
                 dismiss()
             } label: {
@@ -61,7 +61,7 @@ struct RegistrationView: View {
                         .fontWeight(.semibold)
                 }
                 .font(.footnote)
-                .foregroundStyle(.black)
+                .foregroundStyle(.foreground)
             }
             .padding(.vertical, 16)
         }

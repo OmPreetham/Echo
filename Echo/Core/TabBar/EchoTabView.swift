@@ -59,7 +59,7 @@ struct EchoTabView: View {
         }) {
             CreateView()
         }
-        .tint(.black)
+        .tint(.primary)
     }
 }
 

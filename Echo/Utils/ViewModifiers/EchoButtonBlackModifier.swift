@@ -10,12 +10,13 @@ import SwiftUI
 struct EchoButtonBlackModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .font(.subheadline)
+            .fontWeight(.semibold)
             .frame(width: 320)
             .padding()
-            .background(.black)
-            .font(.subheadline)
-            .foregroundStyle(.white)
-            .fontWeight(.semibold)
+            .foregroundStyle(.background)
+            .background(.foreground)
+            .tint(.primary)
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }

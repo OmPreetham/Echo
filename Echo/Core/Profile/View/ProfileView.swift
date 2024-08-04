@@ -61,7 +61,7 @@ struct ProfileView: View {
                                     .fontWeight(selectedFiler == filter ? .semibold : .regular)
                                 if selectedFiler == filter {
                                     Rectangle()
-                                        .foregroundStyle(.black)
+                                        .foregroundStyle(.primary)
                                         .frame(width: filterBarWidth, height: 1)
                                         .matchedGeometryEffect(id: "item", in: animation)
                                 } else {

@@ -34,7 +34,7 @@ struct CreateView: View {
                         } label: {
                             Image(systemName: "xmark")
                                 .resizable()
-                                .foregroundStyle(.gray)
+                                .tint(.secondary)
                                 .frame(width: 12, height: 12)
                         }
                     }
@@ -51,7 +51,7 @@ struct CreateView: View {
                         dismiss()
                     }
                     .font(.subheadline)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -61,7 +61,7 @@ struct CreateView: View {
                     .opacity(caption.isEmpty ? 0.5 : 1)
                     .disabled(caption.isEmpty)
                     .font(.subheadline)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 }
             }
         }

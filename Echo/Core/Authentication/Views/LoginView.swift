@@ -16,7 +16,7 @@ struct LoginView: View {
             
             Spacer()
             
-            Image("Echo")
+            Image(systemName: "rectangle.3.group.bubble.left.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
@@ -36,7 +36,7 @@ struct LoginView: View {
             } label: {
                 Text("Forgot Password?")
                     .font(.footnote)
-                    .foregroundStyle(.black)
+                    .tint(.primary)
                     .fontWeight(.semibold)
                     .padding(.vertical)
                     .padding(.trailing, 28)
@@ -53,6 +53,7 @@ struct LoginView: View {
             Spacer()
             
             Divider()
+                .background(.secondary)
             
             NavigationLink {
                 RegistrationView()
@@ -65,7 +66,7 @@ struct LoginView: View {
                         .fontWeight(.semibold)
                 }
                 .font(.footnote)
-                .foregroundStyle(.black)
+                .tint(.primary)
             }
             .padding(.vertical, 16)
         }

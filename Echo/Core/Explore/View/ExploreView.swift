@@ -17,12 +17,13 @@ struct ExploreView: View {
                     ForEach(0..<10, id: \.self) { user in
                         VStack {
                             UserCell()
-                            
-                            Divider()
                         }
                         .padding(.vertical, 4)
-                        .padding(.leading)
+                        
+                        Divider()
+                            .background(.tertiary)
                     }
+                    .padding(.leading)
                 }
             }
             .navigationTitle("Search")
