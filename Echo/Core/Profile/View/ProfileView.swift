@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     private var filterBarWidth: CGFloat {
         let count = CGFloat(ProfilePostsFilter.allCases.count)
-        return UIScreen.main.bounds.width / count - 20
+        return UIScreen.main.bounds.width / count - 16
     }
     
     var body: some View {
