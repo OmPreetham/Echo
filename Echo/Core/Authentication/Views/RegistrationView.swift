@@ -30,6 +30,7 @@ struct RegistrationView: View {
                     SecureField("Enter your password", text: $viewModel.password)
                     
                     TextField("Enter your fullname", text: $viewModel.fullname)
+                        .textInputAutocapitalization(.words)
 
                     TextField("Enter your username", text: $viewModel.username)
                 }

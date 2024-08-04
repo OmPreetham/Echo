@@ -36,6 +36,9 @@
 		0EA282F92C5EE3670074244C /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282F82C5EE3670074244C /* ActivityView.swift */; };
 		0EA282FD2C5EE3850074244C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282FC2C5EE3850074244C /* ProfileView.swift */; };
 		0EA282FF2C5EE5050074244C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA282FE2C5EE5050074244C /* PostCell.swift */; };
+		0EB9DCD82C5FFE3700516DC9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9DCD72C5FFE3700516DC9 /* User.swift */; };
+		0EB9DCDA2C60037B00516DC9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9DCD92C60037B00516DC9 /* UserService.swift */; };
+		0EB9DCDD2C60054500516DC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9DCDC2C60054500516DC9 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		0EA282F82C5EE3670074244C /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0EA282FC2C5EE3850074244C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0EA282FE2C5EE5050074244C /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		0EB9DCD72C5FFE3700516DC9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0EB9DCD92C60037B00516DC9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		0EB9DCDC2C60054500516DC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +88,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E02A03C2C5F1C9F00255CA1 /* SplashScreen */ = {
+		0E02A03C2C5F1C9F00255CA1 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
 				0E02A03D2C5F1CAE00255CA1 /* View */,
 			);
-			path = SplashScreen;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		0E02A03D2C5F1CAE00255CA1 /* View */ = {
@@ -224,6 +230,7 @@
 		0EA282D42C5ECB0D0074244C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0EB9DCD92C60037B00516DC9 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 		0EA282D52C5ECB0E0074244C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EB9DCD72C5FFE3700516DC9 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,7 +253,7 @@
 		0EA282D72C5ECB1A0074244C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0E02A03C2C5F1C9F00255CA1 /* SplashScreen */,
+				0E02A03C2C5F1C9F00255CA1 /* LaunchScreen */,
 				0EA282F62C5EE35B0074244C /* Activity */,
 				0EA282D82C5ECB570074244C /* Authentication */,
 				0E6F30B32C5EF0FC00808579 /* Components */,
@@ -372,6 +380,7 @@
 		0EA282FA2C5EE37A0074244C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0EB9DCDB2C60053700516DC9 /* ViewModel */,
 				0E6F30BB2C5EFFE900808579 /* EditProfile */,
 				0E6F30B82C5EF8F800808579 /* Model */,
 				0EA282FB2C5EE37F0074244C /* View */,
@@ -385,6 +394,14 @@
 				0EA282FC2C5EE3850074244C /* ProfileView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0EB9DCDB2C60053700516DC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EB9DCDC2C60054500516DC9 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E6EB5302C5F64B8002A7052 /* LoginViewModel.swift in Sources */,
+				0EB9DCDA2C60037B00516DC9 /* UserService.swift in Sources */,
 				0EA282F92C5EE3670074244C /* ActivityView.swift in Sources */,
 				0E6F30BE2C5EFFFB00808579 /* EditProfileView.swift in Sources */,
 				0EA282ED2C5EE2C70074244C /* FeedView.swift in Sources */,
@@ -475,6 +493,7 @@
 				0E6EB5272C5F598A002A7052 /* RegistrationViewModel.swift in Sources */,
 				0E6EB5292C5F5ACC002A7052 /* AuthService.swift in Sources */,
 				0EA282DC2C5ECB890074244C /* LoginView.swift in Sources */,
+				0EB9DCDD2C60054500516DC9 /* ProfileViewModel.swift in Sources */,
 				0EA282FD2C5EE3850074244C /* ProfileView.swift in Sources */,
 				0EA282C52C5ECAE50074244C /* ContentView.swift in Sources */,
 				0EA282F52C5EE3460074244C /* CreateView.swift in Sources */,
@@ -486,6 +505,7 @@
 				0E6F30B52C5EF13200808579 /* CircularProfileImageView.swift in Sources */,
 				0EA282C32C5ECAE50074244C /* EchoApp.swift in Sources */,
 				0E6EB52E2C5F5FF4002A7052 /* ContentViewModel.swift in Sources */,
+				0EB9DCD82C5FFE3700516DC9 /* User.swift in Sources */,
 				0EA282DE2C5ED4D40074244C /* RegistrationView.swift in Sources */,
 				0EA282E92C5EDDF90074244C /* EchoTabView.swift in Sources */,
 				0EA282E32C5ED7FF0074244C /* EchoButtonBlackModifier.swift in Sources */,

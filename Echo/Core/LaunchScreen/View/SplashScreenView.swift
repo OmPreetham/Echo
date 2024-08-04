@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
+struct LaunchScreenView: View {
     @Binding var isPresented: Bool
     
     @State private var screenOpacity: Double = 1.0
@@ -53,5 +53,5 @@ struct SplashScreenView: View {
 }
 
 #Preview {
-    SplashScreenView(isPresented: .constant(true))
+    LaunchScreenView(isPresented: .constant(true))
 }
