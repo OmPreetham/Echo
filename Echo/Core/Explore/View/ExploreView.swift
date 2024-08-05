@@ -14,24 +14,30 @@ struct ExploreView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.users) { user in
-                        NavigationLink(value: user) {
-                            VStack {
-                                UserCell(user: user)
+            ZStack {
+                if !viewModel.users.isEmpty {
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(viewModel.users) { user in
+                                NavigationLink(value: user) {
+                                    VStack {
+                                        UserCell(user: user)
+                                    }
+                                    .padding(.vertical, 4)
+                                }
+                                Divider()
+                                    .background(.tertiary)
                             }
-                            .padding(.vertical, 4)
+                            .padding(.leading)
                         }
-                        Divider()
-                            .background(.tertiary)
                     }
-                    .padding(.leading)
+                    .navigationDestination(for: User.self, destination: { user in
+                        ProfileView(user: user)
+                    })
+                } else {
+                    PendingView(systemName: "rectangle.stack.person.crop", viewName: "Fetching Users")
                 }
             }
-            .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
-            })
             .navigationTitle("Search")
             .searchable(text: $searchText, prompt: "Search")
             .scrollIndicators(.hidden)

@@ -13,9 +13,9 @@ struct EchoTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            FeedView()
+            HomeView()
                 .tabItem {
-                    Label("Feed", systemImage: selectedTab == 0 ? "house.fill" : "house")
+                    Label("Home", systemImage: selectedTab == 0 ? "house.fill" : "house")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
                 }
                 .onAppear { selectedTab = 0 }
@@ -28,7 +28,7 @@ struct EchoTabView: View {
                 .onAppear { selectedTab = 1 }
                 .tag(1)
             
-            Text("Creating Post")
+            PendingView(systemName: "newspaper", viewName: "Creating Post")
                 .tabItem {
                     Label("Create", systemImage: "plus")
                 }
@@ -58,6 +58,7 @@ struct EchoTabView: View {
             selectedTab = 0
         }) {
             CreateView()
+                .presentationDetents([.medium, .large])
         }
         .tint(.primary)
     }

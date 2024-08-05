@@ -58,15 +58,7 @@ struct CurrentUserProfileView: View {
                     
                 }
             } else {
-                VStack(alignment: .center) {
-                    Image(systemName: "person.fill.viewfinder")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .padding()
-                    
-                    ProgressView("Loading Profile")
-                }
+                PendingView(systemName: "person.fill.viewfinder", viewName: "Fetching Profile")
             }
         }
 

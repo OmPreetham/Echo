@@ -1,5 +1,5 @@
 //
-//  FeedView.swift
+//  HomeView.swift
 //  Echo
 //
 //  Created by Om Preetham Bandi on 8/3/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeedView: View {
+struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
@@ -17,7 +17,7 @@ struct FeedView: View {
                     }
                 }
             }
-            .navigationTitle("Feed")
+            .navigationTitle("Home")
             .scrollIndicators(.hidden)
             .refreshable {
                 print("DEBUG: Refresh Threads")
@@ -37,5 +37,5 @@ struct FeedView: View {
 }
 
 #Preview {
-    FeedView()
+    HomeView()
 }
