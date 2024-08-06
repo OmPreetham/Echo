@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EchoTabView: View {
     @State private var selectedTab = 0
-    @State private var showingCreate = false
+//    @State private var showingCreate = false
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -28,12 +28,12 @@ struct EchoTabView: View {
                 .onAppear { selectedTab = 1 }
                 .tag(1)
             
-            PendingView(systemName: "newspaper", viewName: "Creating Post")
-                .tabItem {
-                    Label("Create", systemImage: "plus")
-                }
-                .onAppear { selectedTab = 2 }
-                .tag(2)
+//            PendingView(systemName: "newspaper", viewName: "Creating Post")
+//                .tabItem {
+//                    Label("Create", systemImage: "plus")
+//                }
+//                .onAppear { selectedTab = 2 }
+//                .tag(2)
             
             ActivityView()
                 .tabItem {
@@ -51,15 +51,15 @@ struct EchoTabView: View {
                 .onAppear { selectedTab = 4 }
                 .tag(4)
         }
-        .onChange(of: selectedTab, { oldValue, newValue in
-            showingCreate = selectedTab == 2
-        })
-        .sheet(isPresented: $showingCreate, onDismiss: {
-            selectedTab = 0
-        }) {
-            CreateView()
-                .presentationDetents([.medium, .large])
-        }
+//        .onChange(of: selectedTab, { oldValue, newValue in
+//            showingCreate = selectedTab == 2
+//        })
+//        .sheet(isPresented: $showingCreate, onDismiss: {
+//            selectedTab = 0
+//        }) {
+//            CreateView()
+//                .presentationDetents([.medium, .large])
+//        }
         .tint(.primary)
     }
 }

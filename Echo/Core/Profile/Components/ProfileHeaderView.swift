@@ -34,7 +34,7 @@ struct ProfileHeaderView: View {
             
             Spacer()
             
-            CircularProfileImageView()
+            CircularProfileImageView(user: user, size: .extraLarge)
         }
         .padding(.horizontal)
     }

@@ -11,64 +11,68 @@ struct PostCell: View {
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                CircularProfileImageView()
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text("Shinji")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
+                CircularProfileImageView(user: nil, size: .small)
+
+                VStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(alignment: .center) {
+                            Text("Shinji")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            
+                            Text("120 Upvotes")
+                                .font(.caption2)
+                            
+                            Spacer()
+                            
+                            Text("10m")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .foregroundStyle(.foreground)
+                            }
+                        }
                         
-                        Spacer()
+                        Text("Echo is your platform for open discussions with fellow university students. Share your thoughts, ask questions, and connect with others in a safe and welcoming environment.")
+                            .font(.subheadline)
+                            .lineLimit(9)
+                            .multilineTextAlignment(.leading)
                         
-                        Text("10m")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .foregroundStyle(.foreground)
-                        }
-                    }
-                    
-                    Text("Arigato")
-                        .font(.footnote)
-                        .lineLimit(9)
-                        .multilineTextAlignment(.leading)
-                    
-                    HStack(spacing: 16) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "heart")
-                        }
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "bubble.right")
-                        }
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "arrow.rectanglepath")
-                        }
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "paperplane")
+                        HStack(spacing: 16) {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "heart")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "bubble.right")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "arrow.rectanglepath")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "paperplane")
+                            }
                         }
                     }
                     .foregroundStyle(.primary)
-                    .padding(.vertical, 8)
+                    .padding(.horizontal, 8)
+                    
+                    Divider()
+                        .background(.tertiary)
                 }
             }
             .padding(.vertical, 4)
-            .padding(.trailing)
-            
-            Divider()
-                .background(.tertiary)
         }
         .padding(.leading)
     }

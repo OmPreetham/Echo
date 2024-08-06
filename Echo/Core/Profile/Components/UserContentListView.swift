@@ -11,45 +11,25 @@ struct UserContentListView: View {
     @State private var selectedFiler: ProfilePostsFilter = .posts
     @Namespace var animation
     
-    private var filterBarWidth: CGFloat {
-        let count = CGFloat(ProfilePostsFilter.allCases.count)
-        return UIScreen.main.bounds.width / count - 16
-    }
-
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(ProfilePostsFilter.allCases) { filter in
-                    VStack {
-                        Text(filter.title)
-                            .font(.subheadline)
-                            .fontWeight(selectedFiler == filter ? .semibold : .regular)
-                        if selectedFiler == filter {
-                            Rectangle()
-                                .foregroundStyle(.primary)
-                                .frame(width: filterBarWidth, height: 1)
-                                .matchedGeometryEffect(id: "item", in: animation)
-                        } else {
-                            Rectangle()
-                                .foregroundStyle(.clear)
-                                .frame(width: filterBarWidth, height: 1)
-                        }
-                    }
-                    .onTapGesture {
-                        withAnimation(.spring) {
-                            selectedFiler = filter
-                        }
-                    }
-                }
-            }
-            
-            LazyVStack {
+        LazyVStack(pinnedViews: [.sectionHeaders], content: {
+            Section {
                 ForEach(0..<10, id: \.self) { post in
                     PostCell()
+                        .frame(maxWidth: .infinity)
                 }
+            } header: {
+                Picker("Select Filter", selection: $selectedFiler) {
+                    ForEach(ProfilePostsFilter.allCases) { filter in
+                        Text(filter.title)
+                            .tag(filter)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                .background(.background)
             }
-        }
-        .padding(.vertical, 8)
+        })
     }
 }
 

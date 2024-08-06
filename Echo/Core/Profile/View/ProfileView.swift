@@ -12,7 +12,7 @@ struct ProfileView: View {
         
     var body: some View {
         if let user {
-            ScrollView {
+            ScrollView(.vertical) {
                 VStack(spacing: 20) {
                     ProfileHeaderView(user: user)
                     

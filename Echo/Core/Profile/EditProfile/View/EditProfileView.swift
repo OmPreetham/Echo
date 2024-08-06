@@ -5,86 +5,75 @@
 //  Created by Om Preetham Bandi on 8/3/24.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct EditProfileView: View {
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = EditProfileViewModel()
+    
+    let user: User
+    
     @State private var bio = ""
     @State private var link = ""
     @State private var isPrivateProfile = false
     
+    
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color(.tertiarySystemGroupedBackground)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    // name profile image
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Name")
-                                .fontWeight(.semibold)
-                            
-                            Text("Shinji")
-                        }
-                        
-                        Spacer()
-                        
-                        CircularProfileImageView()
+            HStack(spacing: 16) {
+                PhotosPicker(selection: $viewModel.selectedItem) {
+                    if let image = viewModel.profileImage {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 70, height: 70)
+                            .clipShape(Circle())
+                    } else {
+                        CircularProfileImageView(user: user, size: .extraLarge)
                     }
-                    
-                    Divider()
-                        .background(.tertiary)
-
-                    // Bio field
-                    
-                    VStack(alignment: .leading) {
-                        Text("Bio")
-                            .fontWeight(.semibold)
-                        
-                        TextField("Enter your bio...", text: $bio, axis: .vertical)
-                    }
-                    
-                    Divider()
-                        .background(.tertiary)
-
-                    VStack(alignment: .leading) {
-                        Text("Link")
-                            .fontWeight(.semibold)
-                        
-                        TextField("Add link...", text: $link)
-                    }
-                    
-                    Divider()
-                        .background(.tertiary)
-
-                    Toggle("Private Profile", isOn: $isPrivateProfile)
-                        .tint(.accentColor)
                 }
-                .font(.footnote)
-                .padding()
-                .background(.background)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .padding()
+                
+                Text(user.fullname.capitalized)
+                    .font(.title)
+                    .fontDesign(.serif)
+                    .fontWeight(.medium)
+            }
+            .padding(.leading, 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            List {
+                Section(header: Text("Bio")) {
+                    TextField("Enter your bio...", text: $bio, axis: .vertical)
+                }
+                
+                Section(header: Text("Link")) {
+                    TextField("Add link...", text: $link)
+                }
+                
+                Section {
+                    Toggle("Private Profile", isOn: $isPrivateProfile)
+                }
             }
             .navigationTitle("Edit Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        
+                        dismiss()
                     }
                     .font(.subheadline)
-                    .foregroundStyle(.foreground)
                 }
                 
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        
+                        Task {
+                            try await viewModel.updateUserData()
+                            dismiss()
+                        }
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.foreground)
                 }
             }
         }
@@ -92,5 +81,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(user: .init(id: "", fullname: "", email: "", username: ""))
 }

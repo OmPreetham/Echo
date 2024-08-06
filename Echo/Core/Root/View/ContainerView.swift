@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContainerView: View {
-    @State private var showingSplashScreen: Bool = true
+    @State private var showingLaunchScreen: Bool = true
     
     var body: some View {
-        if showingSplashScreen {
-            LaunchScreenView(isPresented: $showingSplashScreen)
-        } else {
-            ContentView()
+        ZStack {
+            if showingLaunchScreen {
+                LaunchScreenView(isPresented: $showingLaunchScreen)
+            } else {
+                ContentView()
+            }
         }
     }
 }

@@ -38,7 +38,7 @@ struct ExploreView: View {
                     PendingView(systemName: "rectangle.stack.person.crop", viewName: "Fetching Users")
                 }
             }
-            .navigationTitle("Search")
+            .navigationTitle("Explore")
             .searchable(text: $searchText, prompt: "Search")
             .scrollIndicators(.hidden)
         }

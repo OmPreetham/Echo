@@ -16,7 +16,7 @@ struct CreateView: View {
         NavigationStack {
             VStack {
                 HStack(alignment: .top) {
-                    CircularProfileImageView()
+                    CircularProfileImageView(user: nil)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Shinji")

@@ -13,6 +13,9 @@ struct CurrentUserProfileView: View {
     private var currentUser: User? {
         viewModel.currentUser
     }
+    
+    @State private var showingEditProfileView: Bool = false
+    @State private var showingUserCardView: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -24,7 +27,7 @@ struct CurrentUserProfileView: View {
                         HStack {
                             Group {
                                 Button {
-                                    
+                                    showingEditProfileView.toggle()
                                 } label: {
                                     Label("Edit", systemImage: "square.and.pencil")
                                 }
@@ -42,6 +45,10 @@ struct CurrentUserProfileView: View {
                         UserContentListView()
                     }
                 }
+                .sheet(isPresented: $showingEditProfileView, content: {
+                    EditProfileView(user: currentUser)
+                        .presentationDetents([.medium, .large])
+                })
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
@@ -54,9 +61,19 @@ struct CurrentUserProfileView: View {
                 }
                 .navigationTitle(currentUser.username)
                 .scrollIndicators(.hidden)
+                .toolbar {
+                    ToolbarItem(placement: .automatic) {
+                        Button("Card", systemImage: "trophy.fill") {
+                            showingUserCardView.toggle()
+                        }
+                    }
+                }
                 .refreshable {
                     
                 }
+                .sheet(isPresented: $showingUserCardView, content: {
+                    UserCardView(user: currentUser)
+                })
             } else {
                 PendingView(systemName: "person.fill.viewfinder", viewName: "Fetching Profile")
             }

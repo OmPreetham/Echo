@@ -23,9 +23,7 @@ struct EchoApp: App {
 
   var body: some Scene {
     WindowGroup {
-      NavigationView {
         ContainerView()
-      }
     }
   }
 }

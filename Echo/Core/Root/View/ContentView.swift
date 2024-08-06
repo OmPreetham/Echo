@@ -10,12 +10,14 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = ContentViewModel()
     
-    @State private var selectedTab = 0
-    @State private var showingCreate = false
+    @AppStorage("showingOnboarding") var showingOnboarding: Bool = true
+
+    @State private var showingCreate: Bool = false
+    @State private var showingLogin: Bool = false
 
     var body: some View {
-        if viewModel.userSession != nil {
-            ZStack {
+        ZStack {
+            if viewModel.userSession != nil {
                 EchoTabView()
                 
                 Button {
@@ -33,12 +35,16 @@ struct ContentView: View {
                 .padding(.bottom, 70)
                 .padding(.trailing, 20)
             }
-            .sheet(isPresented: $showingCreate) {
-                CreateView()
-                    .presentationDetents([.medium, .large])
-            }
-        } else {
+        }
+        .sheet(isPresented: $showingOnboarding) {
+            OnboardingView(isOnboardingShowing: $showingOnboarding)
+        }
+        .sheet(isPresented: .constant(viewModel.userSession == nil)) {
             LoginView()
+        }
+        .sheet(isPresented: $showingCreate) {
+            CreateView()
+                .presentationDetents([.medium, .large])
         }
     }
 }

@@ -65,6 +65,7 @@ struct RegistrationView: View {
             }
             .padding(.vertical, 16)
         }
+        .interactiveDismissDisabled()
     }
 }
 
