@@ -8,12 +8,14 @@
 import Foundation
 
 enum ProfilePostsFilter: Int, CaseIterable, Identifiable {
-    case posts, replies
+    case posts, replies, bookmarks, likes
     
     var title: String {
         switch self {
         case .posts: return "Posts"
         case .replies: return "Replies"
+        case .bookmarks: return "Bookmarks"
+        case .likes: return "Likes"
         }
     }
     

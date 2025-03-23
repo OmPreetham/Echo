@@ -13,6 +13,9 @@
 		0E0922A42C5F56340057AFB6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0922A32C5F56340057AFB6 /* FirebaseAuth */; };
 		0E0922A62C5F56340057AFB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0922A52C5F56340057AFB6 /* FirebaseFirestore */; };
 		0E0922A82C5F56340057AFB6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E0922A72C5F56340057AFB6 /* FirebaseStorage */; };
+		0E3EAAA92C62EF5F00E4A7F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EAAA82C62EF5F00E4A7F2 /* Post.swift */; };
+		0E3EAAAC2C62F06600E4A7F2 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EAAAB2C62F06600E4A7F2 /* CreateViewModel.swift */; };
+		0E3EAAAE2C62F09700E4A7F2 /* CreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EAAAD2C62F09700E4A7F2 /* CreateService.swift */; };
 		0E456CFC2C60A274002C2B5B /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E456CFB2C60A274002C2B5B /* UserCardView.swift */; };
 		0E6EB5272C5F598A002A7052 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB5262C5F598A002A7052 /* RegistrationViewModel.swift */; };
 		0E6EB5292C5F5ACC002A7052 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6EB5282C5F5ACB002A7052 /* AuthService.swift */; };
@@ -62,6 +65,9 @@
 		0E02A03E2C5F1CB900255CA1 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		0E02A0402C5F1CE700255CA1 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		0E0922A02C5F55310057AFB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E3EAAA82C62EF5F00E4A7F2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0E3EAAAB2C62F06600E4A7F2 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		0E3EAAAD2C62F09700E4A7F2 /* CreateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateService.swift; sourceTree = "<group>"; };
 		0E456CFB2C60A274002C2B5B /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
 		0E6EB5262C5F598A002A7052 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0E6EB5282C5F5ACB002A7052 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -136,6 +142,14 @@
 				0E02A03E2C5F1CB900255CA1 /* LaunchScreenView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0E3EAAAA2C62F03E00E4A7F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E3EAAAB2C62F06600E4A7F2 /* CreateViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0E456CFA2C60A232002C2B5B /* UserCard */ = {
@@ -321,6 +335,7 @@
 			children = (
 				0EE1E6DA2C608CBE006E0D6A /* ImageUploader.swift */,
 				0EB9DCD92C60037B00516DC9 /* UserService.swift */,
+				0E3EAAAD2C62F09700E4A7F2 /* CreateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -329,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB9DCD72C5FFE3700516DC9 /* User.swift */,
+				0E3EAAA82C62EF5F00E4A7F2 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -443,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA282F32C5EE33D0074244C /* View */,
+				0E3EAAAA2C62F03E00E4A7F2 /* ViewModel */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -670,11 +687,14 @@
 				0E9FEF002C61814F0092C6F7 /* OnboardingModel.swift in Sources */,
 				0EA282FF2C5EE5050074244C /* PostCell.swift in Sources */,
 				0E02A0412C5F1CE700255CA1 /* ContainerView.swift in Sources */,
+				0E3EAAAE2C62F09700E4A7F2 /* CreateService.swift in Sources */,
 				0E6F30B52C5EF13200808579 /* CircularProfileImageView.swift in Sources */,
 				0EA282C32C5ECAE50074244C /* EchoApp.swift in Sources */,
 				0EB9DCF32C6022BF00516DC9 /* CurrentUserProfileViewModel.swift in Sources */,
 				0EEC541C2C61DE79008CF9E8 /* UserCardModel.swift in Sources */,
 				0E6EB52E2C5F5FF4002A7052 /* ContentViewModel.swift in Sources */,
+				0E3EAAAC2C62F06600E4A7F2 /* CreateViewModel.swift in Sources */,
+				0E3EAAA92C62EF5F00E4A7F2 /* Post.swift in Sources */,
 				0EEC54192C61DE50008CF9E8 /* UserCardViewModel.swift in Sources */,
 				0EB9DCD82C5FFE3700516DC9 /* User.swift in Sources */,
 				0EA282DE2C5ED4D40074244C /* RegistrationView.swift in Sources */,

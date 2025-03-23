@@ -10,7 +10,7 @@ import SwiftUI
 struct PostCell: View {
     var body: some View {
         VStack {
-            HStack(alignment: .top, spacing: 12) {
+            HStack(alignment: .top, spacing: 4) {
                 CircularProfileImageView(user: nil, size: .small)
 
                 VStack(spacing: 12) {
@@ -48,20 +48,25 @@ struct PostCell: View {
                             } label: {
                                 Image(systemName: "heart")
                             }
+                            
                             Button {
                                 
                             } label: {
                                 Image(systemName: "bubble.right")
                             }
+
                             Button {
                                 
                             } label: {
-                                Image(systemName: "arrow.rectanglepath")
+                                Image(systemName: "bookmark")
                             }
+                            
+                            Spacer()
+                            
                             Button {
                                 
                             } label: {
-                                Image(systemName: "paperplane")
+                                ShareLink("", item: "")
                             }
                         }
                     }

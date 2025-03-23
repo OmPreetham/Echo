@@ -9,22 +9,27 @@ import SwiftUI
 
 struct CreateView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = CreateViewModel()
     
     @State private var caption = ""
+    
+    private var user: User? {
+        UserService.shared.currentUser
+    }
     
     var body: some View {
         NavigationStack {
             VStack {
                 HStack(alignment: .top) {
-                    CircularProfileImageView(user: nil)
+                    CircularProfileImageView(user: user, size: .medium)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Shinji")
+                        Text(user?.username ?? "No user")
                             .fontWeight(.semibold)
                         
                         TextField("Start writing", text: $caption, axis: .vertical)
                     }
-                    .font(.footnote)
+                    .font(.subheadline)
                     
                     Spacer()
                     
@@ -56,7 +61,8 @@ struct CreateView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Post") {
-                        
+                        Task { try await viewModel.uploadPost(caption: caption) }
+                        dismiss()
                     }
                     .opacity(caption.isEmpty ? 0.5 : 1)
                     .disabled(caption.isEmpty)
